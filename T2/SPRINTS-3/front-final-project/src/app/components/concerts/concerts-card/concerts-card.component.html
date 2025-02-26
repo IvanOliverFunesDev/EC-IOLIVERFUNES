@@ -1,0 +1,10 @@
+<div class="card">
+    <img [src]="concert.image || 'noImage.png'" alt="{{concert.title}}" (click)="goToDetails()">
+    <p>{{ concert.title }}</p>
+    <p>{{ concert.date | date: 'd MMM y'}}</p>
+    <p>Banda: {{ concert.band.bandName }}</p>
+    <p>Location: {{ concert.location }}</p>
+    <i (click)="toggleFavorite(concert)"
+        [class]="concert.isFavorite ? 'fa-solid fa-heart text-red' : 'fa-regular fa-heart text-white'"
+        style="cursor: pointer;"></i>
+</div>

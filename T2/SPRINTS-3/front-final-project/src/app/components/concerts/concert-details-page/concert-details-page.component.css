@@ -1,0 +1,144 @@
+.concert-detail {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to bottom, #506d8b, #2b3a4a);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.concert-image-container {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.concert-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.concert-info {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    color: white;
+    justify-content: center;
+}
+
+.concert-title {
+    font-family: 'Metal Mania', sans-serif;
+    font-size: 54px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.concert-band-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.band-image-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.band-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.band-name {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+
+/* ___________________________________________________________ */
+
+.related-concerts {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.related-concerts h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.related-concerts h2 .view-discography {
+    font-size: 0.9rem;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration-line: underline;
+}
+
+.related-concerts h2 .view-discography:hover {
+    color: white;
+}
+
+.related-concerts-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.related-concert-card {
+    min-width: 150px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.related-concert-card:hover {
+    transform: scale(1.05);
+}
+
+.related-concert-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.related-concert-info {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.related-concert-info h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.related-concert-info p {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 0;
+}

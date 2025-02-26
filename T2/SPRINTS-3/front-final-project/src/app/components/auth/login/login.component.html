@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="ring">
+        <i style="--clr: #00f0a;"></i>
+        <i style="--clr: #ff00bb;"></i>
+        <i style="--clr: #ff00bb;"></i>
+        <div class="login">
+            <h2>Login</h2>
+            <form [formGroup]="myForm" (ngSubmit)="login()">
+                <div class="inputBx">
+                    <input type="text" placeholder="Email" formControlName="email">
+                    @if (isNotValidField('email')) { <!-- para mostrar los errores -->
+                    <p class="error">El email es requerido y debe de tener un formato de email</p>
+                    }
+                </div>
+                <br>
+                <div class="inputBx">
+                    <input type="password" placeholder="Password" formControlName="password">
+                    @if (isNotValidField('password')) { <!-- para mostrar los errores -->
+                    <p class="error">La password es requerido</p>
+                    }
+                </div>
+                <br>
+                <div class=" inputBx">
+                    <input type="submit" value="Log in">
+                </div>
+            </form>
+            <div class="links">
+                <a routerLink="/forgot-password">Forget Password?</a>
+                <a routerLink="/register">Create Account</a>
+            </div>
+        </div>
+    </div>
+</div>

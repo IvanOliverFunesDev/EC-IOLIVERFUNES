@@ -1,0 +1,55 @@
+<br>
+<div *ngIf="concert" class="concert-detail">
+    <div class="concert-image-container">
+        <img [src]="concert.image || 'noImage.png'" alt="{{ concert.title }}">
+    </div>
+
+    <div class="concert-info">
+        <p>Concert</p>
+        <h1 class="concert-title">{{ concert.title }}</h1>
+
+        <div class="concert-band-container">
+            <div class="band-image-container">
+                <img class="band-image" [src]="concert.band.image || 'noImageBand.png'"
+                    alt="{{ concert.band.bandName }}" (click)="goToDetailsBand()">
+            </div>
+            <p class="band-name" (click)="goToDetailsBand()">{{ concert.band.bandName }}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="relatedConcerts.length > 0" class="related-concerts">
+    <h2>🎸 Conciertos Relacionados</h2>
+    <div class="related-concerts-container">
+        <div class="related-concert-card" *ngFor="let related of relatedConcerts" (click)="goToDetails(related)">
+            <img [src]="related.image || 'noImage.png'" alt="{{ related.title }}">
+            <div class="related-concert-info">
+                <h3>{{ related.title }}</h3>
+                <p>{{ related.date | date: 'fullDate' }}</p>
+                <p>{{ related.location }}</p>
+                <p>Banda: {{ related.band.bandName }}</p>
+                <p>Banda: {{ related.band.id }}</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="relatedConcerts.length > 0" class="related-concerts">
+    <h2>
+        Más de {{concert?.band?.bandName}}
+        <a class="view-discography" (click)="goToDetailsBand()">Ver discografía</a>
+    </h2>
+    <div class="related-concerts-container">
+        <div class="related-concert-card" *ngFor="let sameBandConcert of concertsOfSameBand"
+            (click)="goToDetails(sameBandConcert)">
+            <img [src]="sameBandConcert.image || 'noImage.png'" alt="{{ sameBandConcert.title }}">
+            <div class="related-concert-info">
+                <h3>{{ sameBandConcert.title }}</h3>
+                <p>{{ sameBandConcert.date | date: 'd MMM y' }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p *ngIf="!concert">Concierto no encontrado</p>

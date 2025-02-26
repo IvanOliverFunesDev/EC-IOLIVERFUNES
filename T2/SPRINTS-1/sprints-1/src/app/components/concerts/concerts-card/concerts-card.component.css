@@ -1,0 +1,77 @@
+.card {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.6), 0 0 40px rgba(255, 20, 147, 0.4);
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.4) contrast(1.2);
+}
+
+.card-header,
+.card-info {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    margin: 0;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-header {
+    top: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-info {
+    bottom: 10px;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover .card-header,
+.card:hover .card-info {
+    opacity: 1;
+}
+
+.card:hover img {
+    filter: brightness(0.1);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.6), 0 0 40px rgba(255, 20, 147, 0.4);
+}

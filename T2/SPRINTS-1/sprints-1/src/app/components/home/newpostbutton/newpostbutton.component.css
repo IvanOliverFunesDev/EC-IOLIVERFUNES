@@ -1,0 +1,12 @@
+.navbar-link {
+    margin: 0 90px;
+    color: #6AAAAA;
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #fff, 0 0 15px #fff;
+}
